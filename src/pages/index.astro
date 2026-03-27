@@ -1,17 +1,294 @@
 ---
-
+// ここにAstroのJavaScript/TypeScriptを書くことができますが、
+// 今回は単純なHTMLの移植なので空のままで大丈夫です。
 ---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HPリニューアル検討資料ポータル</title>
+	<script src="https://cdn.tailwindcss.com" is:inline></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<style is:global>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 60%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 p-4 md:p-8">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">ホームページ デザイン構成案</h1>
+            <p class="text-slate-600">ミーティングでの決定事項を反映した「最新案」を作成しました。</p>
+            <p class="text-xs text-slate-400 mt-2">最終更新: 2026.03.27</p>
+        </header>
+
+        <div class="mb-12">
+            <h2 class="text-xl font-bold text-slate-700 mb-4 flex items-center">
+                <i class="fas fa-star text-yellow-500 mr-2"></i> 採用候補・最新版
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                
+                <a href="https://shin-nihon-tec-web.g25tk012.workers.dev/" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 h-full flex flex-col">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg z-10">新ニホンテック</div>
+                    <div class="p-6 md:p-8 flex flex-col justify-between h-full">
+                        <div class="text-white mb-6">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-3">公開中</span>
+                                <h3 class="text-xl md:text-2xl font-bold">新ニホンテック<br>最新デモサイト</h3>
+                            </div>
+                            <p class="text-teal-100 text-sm leading-relaxed mb-4">
+                                Cloudflare Pagesにて構築された本番稼働用のテストサイトです。
+                            </p>
+                        </div>
+                        <div class="bg-white text-teal-900 px-6 py-3 rounded-xl font-bold shadow-lg group-hover:bg-teal-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+                            サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://e-create-web.guest-01.workers.dev/" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 h-full flex flex-col">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-slate-900 text-xs font-bold px-4 py-1 rounded-bl-lg z-10">E-クリエイト</div>
+                    <div class="p-6 md:p-8 flex flex-col justify-between h-full">
+                        <div class="text-white mb-6">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-yellow-500 text-slate-900 text-xs font-bold px-2 py-1 rounded mr-3">公開中</span>
+                                <h3 class="text-xl md:text-2xl font-bold">E-クリエイト<br>最新デモサイト</h3>
+                            </div>
+                            <p class="text-red-100 text-sm leading-relaxed mb-4">
+                                新しく構築された株式会社E-クリエイト様向けの本番稼働用テストサイトです。
+                            </p>
+                        </div>
+                        <div class="bg-white text-red-900 px-6 py-3 rounded-xl font-bold shadow-lg group-hover:bg-red-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+                            サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-700 mb-4 flex items-center">
+                <i class="fas fa-palette text-indigo-500 mr-2"></i> デモサイト一覧（カラー・企業別）
+            </h2>
+            <p class="text-slate-600 text-sm mb-6">新ニホンテック様およびE-クリエイト様の各デモサイトへのリンクです。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="theme-red.html" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-red-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Red Theme</h3>
+                            <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">別デザイン</span>
+                        </div>
+                        <p class="text-red-100 text-xs leading-relaxed mb-6">
+                            情熱やエネルギーを感じさせる、インパクト重視の赤色テーマです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-red-900 transition text-center text-sm">
+                            赤のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="theme-green.html" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-emerald-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Green Theme</h3>
+                            <span class="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded">ロゴ基準色</span>
+                        </div>
+                        <p class="text-emerald-100 text-xs leading-relaxed mb-6">
+                            会社のロゴカラーに合わせた、安心感と信頼感を与える基本テーマです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-emerald-900 transition text-center text-sm">
+                            緑のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="theme-blue.html" target="_blank" class="block group bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-blue-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Blue Theme</h3>
+                            <span class="bg-white/20 text-white text-xs font-bold px-2 py-1 rounded">旧デザイン</span>
+                        </div>
+                        <p class="text-blue-100 text-xs leading-relaxed mb-6">
+                            旧バージョンで使用していた、誠実でクリーンな青色テーマのデモサイトです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-blue-900 transition text-center text-sm">
+                            青のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <br>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="theme-red-ekuri.html" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-red-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Red Theme</h3>
+                            <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">E-クリエイト</span>
+                        </div>
+                        <p class="text-red-100 text-xs leading-relaxed mb-6">
+                            情熱やエネルギーを感じさせる、インパクト重視の赤色テーマです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-red-900 transition text-center text-sm">
+                            赤のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="theme-green-ekuri.html" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-emerald-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Green Theme</h3>
+                            <span class="bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded">E-クリエイト</span>
+                        </div>
+                        <p class="text-emerald-100 text-xs leading-relaxed mb-6">
+                            安心感と信頼感を与える基本テーマです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-emerald-900 transition text-center text-sm">
+                            緑のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="theme-blue-ekuri.html" target="_blank" class="block group bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden relative transform hover:-translate-y-1 border border-blue-700">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Blue Theme</h3>
+                            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">E-クリエイト</span>
+                        </div>
+                        <p class="text-blue-100 text-xs leading-relaxed mb-6">
+                            誠実でクリーンな青色テーマのデモサイトです。
+                        </p>
+                        <div class="bg-white/10 text-white border border-white/30 w-full px-4 py-2 rounded font-bold group-hover:bg-white group-hover:text-blue-900 transition text-center text-sm">
+                            青のデモを見る <i class="fas fa-external-link-alt ml-1"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <hr class="border-slate-300 my-10">
+
+        <div>
+            <h2 class="text-lg font-bold text-slate-500 mb-6 flex items-center">
+                <i class="fas fa-history mr-2"></i> 検討の履歴 (比較用)
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">採用・ブランディング</div>
+                    <div class="p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mr-3 text-lg">1</div>
+                            <h2 class="text-xl font-bold text-slate-800">1ページ完結型 (LP風)</h2>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-bold">スクロールで物語を読ませる今風の構成</p>
+                        <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                            縦に長いページ構成で、会社の歴史や強みを順番に見せるスタイル。スマホでの閲覧性が最も高く、採用サイトなどで人気です。
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="type1.html" class="bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                                <i class="fas fa-desktop mr-1"></i> デモを見る
+                            </a>
+                            <a href="https://sasaki-inc.co.jp/recruit/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                                <i class="fas fa-external-link-alt mr-1"></i> 参考：㈱ササキ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">信頼・BtoB取引</div>
+                    <div class="p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold mr-3 text-lg">2</div>
+                            <h2 class="text-xl font-bold text-slate-800">王道の階層型</h2>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-bold">欲しい情報へ最短で案内するカタログ構成</p>
+                        <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                            トップページはシンプルにし、メニューから各ページへ飛ぶ形式。銀行や大手メーカーのような「しっかりした」印象を与えます。
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="type2.html" class="bg-slate-700 hover:bg-slate-800 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                                <i class="fas fa-desktop mr-1"></i> デモを見る
+                            </a>
+                            <a href="https://www.miyazaki-ss.co.jp/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                                <i class="fas fa-external-link-alt mr-1"></i> 参考：宮崎製作所
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">製品紹介・ニュース</div>
+                    <div class="p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center font-bold mr-3 text-lg">3</div>
+                            <h2 class="text-xl font-bold text-slate-800">グリッド/カード型</h2>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-bold">多くの情報を並列に見せる一覧デザイン</p>
+                        <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                            画面にパネルが並び、直感的に選べるスタイル。ニュースや製品、イベント情報などを並列にアピールでき、更新頻度が高い会社向きです。
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="type3.html" class="bg-teal-600 hover:bg-teal-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                                <i class="fas fa-desktop mr-1"></i> デモを見る
+                            </a>
+                            <a href="https://muuuuu.org/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                                <i class="fas fa-external-link-alt mr-1"></i> 参考：MUUUUU
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">周年記念・イベント</div>
+                    <div class="p-6 flex-1">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold mr-3 text-lg">4</div>
+                            <h2 class="text-xl font-bold text-slate-800">オープニング演出型</h2>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-bold">第一印象で心を掴むインパクト重視</p>
+                        <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                            サイトを開いた瞬間に、全画面で周年写真やロゴを表示。テレビCMのような演出で強い印象を残します。
+                        </p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="type4.html" class="bg-indigo-600 hover:bg-indigo-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                                <i class="fas fa-desktop mr-1"></i> デモを見る
+                            </a>
+                            <a href="https://www.toyo-seiko.co.jp/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                                <i class="fas fa-external-link-alt mr-1"></i> 参考：東洋精工
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
 </html>

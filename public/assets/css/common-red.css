@@ -1,0 +1,24 @@
+/* --- テーマカラーの定義 (CSS変数) --- */
+:root {
+  /* ==========================================
+     ★赤テーマ (情熱・エネルギー)
+     ========================================== */
+  --color-primary: 185 28 28;   /* 濃い赤 (red-700) */ /* #B91C1C のRGB値 */
+  --color-secondary: 239 68 68; /* 明るい赤 (red-500) */ /* #EF4444 のRGB値 */
+
+  /* --- 共通カラー --- */
+  --color-accent: 245 158 11;    /* 金色・オレンジ (強調・アクセント) - どのテーマでも合います */
+   --color-light: 243 244 246;     /* 薄いグレー */ /* #f59e0b のRGB値 */
+}
+
+
+/* 全ページ共通のスタイル */
+body { font-family: 'Noto Sans JP', sans-serif; }
+.font-eng { font-family: 'Oswald', sans-serif; }
+.scroll-smooth { scroll-behavior: smooth; }
+
+/* フッターのリンクが前面に来るように調整 */
+footer a {
+    position: relative;
+    z-index: 20;
+}
