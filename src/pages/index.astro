@@ -1,6 +1,4 @@
 ---
-// ここにAstroのJavaScript/TypeScriptを書くことができますが、
-// 今回は単純なHTMLの移植なので空のままで大丈夫です。
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -44,43 +42,64 @@
         </header>
 
         <div class="mb-12">
-            <h2 class="text-xl font-bold text-slate-700 mb-4 flex items-center">
+
+            <!-- 新ニホンテック セクション -->
+            <h2 class="text-xl font-bold text-slate-700 mb-2 flex items-center">
                 <i class="fas fa-star text-yellow-500 mr-2"></i> 採用候補・最新版
             </h2>
+            <p class="text-slate-500 text-sm mb-4">新ニホンテック</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                
-                <a href="https://shin-nihon-tec-web.guest-01.workers.dev/" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 h-full flex flex-col">
-                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg z-10">新ニホンテック</div>
-                    <div class="p-6 md:p-8 flex flex-col justify-between h-full">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                <!-- 新ニホンテック: main (ver1.0) -->
+                <a href="https://shin-nihon-tec-web.pages.dev/" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">公開中</div>
+                    <div class="p-6 flex flex-col justify-between h-full">
                         <div class="text-white mb-6">
                             <div class="flex items-center mb-3">
-                                <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-3">公開中</span>
-                                <h3 class="text-xl md:text-2xl font-bold">新ニホンテック<br>最新デモサイト</h3>
+                                <h3 class="text-lg font-bold">ver 1.0<br><span class="text-sm font-normal text-teal-200">基本サイト</span></h3>
                             </div>
-                            <p class="text-teal-100 text-sm leading-relaxed mb-4">
-                                Cloudflare Pagesにて構築された本番稼働用のテストサイトです。
+                            <p class="text-teal-100 text-xs leading-relaxed">
+                                mainブランチ。最低限の機能で公開中の本番サイトです。
                             </p>
                         </div>
-                        <div class="bg-white text-teal-900 px-6 py-3 rounded-xl font-bold shadow-lg group-hover:bg-teal-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+                        <div class="bg-white text-teal-900 px-4 py-2 rounded-xl font-bold shadow-lg group-hover:bg-teal-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm">
                             サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
                         </div>
                     </div>
                 </a>
 
-                <a href="https://e-create-web.guest-01.workers.dev/" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 h-full flex flex-col">
-                    <div class="absolute top-0 right-0 bg-yellow-500 text-slate-900 text-xs font-bold px-4 py-1 rounded-bl-lg z-10">E-クリエイト</div>
-                    <div class="p-6 md:p-8 flex flex-col justify-between h-full">
+                <!-- 新ニホンテック: feature/func1 (制作実績一覧) -->
+                <a href="https://bee0da92.shin-nihon-tec-web.pages.dev/" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">開発中</div>
+                    <div class="p-6 flex flex-col justify-between h-full">
                         <div class="text-white mb-6">
                             <div class="flex items-center mb-3">
-                                <span class="bg-yellow-500 text-slate-900 text-xs font-bold px-2 py-1 rounded mr-3">公開中</span>
-                                <h3 class="text-xl md:text-2xl font-bold">E-クリエイト<br>最新デモサイト</h3>
+                                <h3 class="text-lg font-bold">機能1追加版<br><span class="text-sm font-normal text-teal-200">制作実績一覧</span></h3>
                             </div>
-                            <p class="text-red-100 text-sm leading-relaxed mb-4">
-                                新しく構築された株式会社E-クリエイト様向けの本番稼働用テストサイトです。
+                            <p class="text-teal-100 text-xs leading-relaxed">
+                                制作実績一覧ページを追加したバージョンです。
                             </p>
                         </div>
-                        <div class="bg-white text-red-900 px-6 py-3 rounded-xl font-bold shadow-lg group-hover:bg-red-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center whitespace-nowrap">
+                        <div class="bg-white text-teal-900 px-4 py-2 rounded-xl font-bold shadow-lg group-hover:bg-teal-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm">
+                            サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 新ニホンテック: feature/func2 (リニア駅定点カメラ) -->
+                <a href="https://1034d964.shin-nihon-tec-web.pages.dev/" target="_blank" class="block group bg-gradient-to-br from-emerald-800 to-teal-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">開発中</div>
+                    <div class="p-6 flex flex-col justify-between h-full">
+                        <div class="text-white mb-6">
+                            <div class="flex items-center mb-3">
+                                <h3 class="text-lg font-bold">機能2追加版<br><span class="text-sm font-normal text-teal-200">リニア駅定点カメラ</span></h3>
+                            </div>
+                            <p class="text-teal-100 text-xs leading-relaxed">
+                                リニア駅定点カメラページを追加したバージョンです。
+                            </p>
+                        </div>
+                        <div class="bg-white text-teal-900 px-4 py-2 rounded-xl font-bold shadow-lg group-hover:bg-teal-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm">
                             サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
                         </div>
                     </div>
@@ -88,6 +107,50 @@
 
             </div>
 
+            <!-- E-クリエイト セクション -->
+            <p class="text-slate-500 text-sm mb-4">E-クリエイト</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+
+                <!-- E-クリエイト: 最新デモ -->
+                <a href="https://e-create-web.guest-01.workers.dev/" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-slate-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">最新デモ</div>
+                    <div class="p-6 flex flex-col justify-between h-full">
+                        <div class="text-white mb-6">
+                            <div class="flex items-center mb-3">
+                                <h3 class="text-lg font-bold">E-クリエイト<br><span class="text-sm font-normal text-red-200">最新デモサイト</span></h3>
+                            </div>
+                            <p class="text-red-100 text-xs leading-relaxed">
+                                新しく構築された株式会社E-クリエイト様向けの最新デモサイトです。
+                            </p>
+                        </div>
+                        <div class="bg-white text-red-900 px-4 py-2 rounded-xl font-bold shadow-lg group-hover:bg-red-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm">
+                            サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- E-クリエイト: 公開中 -->
+                <a href="https://www.e-kuri.com/" target="_blank" class="block group bg-gradient-to-br from-red-800 to-rose-900 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative shine-effect transform hover:-translate-y-1 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">公開中</div>
+                    <div class="p-6 flex flex-col justify-between h-full">
+                        <div class="text-white mb-6">
+                            <div class="flex items-center mb-3">
+                                <h3 class="text-lg font-bold">E-クリエイト<br><span class="text-sm font-normal text-red-200">公開中ページ</span></h3>
+                            </div>
+                            <p class="text-red-100 text-xs leading-relaxed">
+                                現在公開中のE-クリエイト様のページです。
+                            </p>
+                        </div>
+                        <div class="bg-white text-red-900 px-4 py-2 rounded-xl font-bold shadow-lg group-hover:bg-red-50 group-hover:scale-105 transition-all duration-300 flex items-center justify-center text-sm">
+                            サイトを開く <i class="fas fa-external-link-alt ml-2"></i>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- テーマカラー一覧 -->
             <h2 class="text-xl font-bold text-slate-700 mb-4 flex items-center">
                 <i class="fas fa-palette text-indigo-500 mr-2"></i> デモサイト一覧（カラー・企業別）
             </h2>
